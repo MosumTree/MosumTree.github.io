@@ -1,0 +1,273 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="CSS:Flex布局"><meta name="keywords" content="css"><meta name="author" content="Mosum,undefined"><meta name="copyright" content="Mosum"><title>CSS:Flex布局 | Mosum's blog</title><link rel="shortcut icon" href="/my-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.5.6"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css?version=1.5.6"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer></script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"KPIQLS6K9K","apiKey":"a4f002559375175ef8b693786815aeb1","indexName":"dev_mosumsblog","hits":{"per_page":10},"languages":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}.","hits_stats":"${hits} results found in ${time} ms"}},
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本情景"><span class="toc-number">1.</span> <span class="toc-text">基本情景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#容器属性"><span class="toc-number">2.</span> <span class="toc-text">容器属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-flex-direction"><span class="toc-number">2.1.</span> <span class="toc-text">1.flex-direction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-flex-wrap"><span class="toc-number">2.2.</span> <span class="toc-text">2.flex-wrap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-flex-flow"><span class="toc-number">2.3.</span> <span class="toc-text">3.flex-flow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-justify-content"><span class="toc-number">2.4.</span> <span class="toc-text">4.justify-content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-align-items"><span class="toc-number">2.5.</span> <span class="toc-text">5.align-items</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-align-content"><span class="toc-number">2.6.</span> <span class="toc-text">6.align-content</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#成员属性"><span class="toc-number">3.</span> <span class="toc-text">成员属性</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="img/avatar.jpg"></div><div class="author-info__name text-center">Mosum</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">16</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">10</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">4</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1533715827668&amp;di=fe4f9d9538d24b121c53945249e1ad35&amp;imgtype=0&amp;src=http%3A%2F%2Fimg-download.pchome.net%2Fdownload%2F1k0%2Fk5%2F3w%2Fo6owr2-rxi.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Mosum's blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> Search</span></a><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">CSS:Flex布局</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-08-10</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/CSS/">CSS</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2018/08/10/CSS-Flex/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2018/08/10/CSS-Flex/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>本来觉得阮一峰老师关于flex布局写的非常详细了，就像直接照搬过来作为转载，经过一些项目的练手，越发觉得flex布局相较于一些css样式操作的确是方便了许多，因此就就想再写一些自己的心得体会，更深入的了解一下CSS中的flex布局。<br><!-- TOC --></p>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%83%85%E6%99%AF">基本情景</a></li>
+<li><a href="#%E5%AE%B9%E5%99%A8%E5%B1%9E%E6%80%A7">容器属性</a><ul>
+<li><a href="#1flex-direction">1.flex-direction</a></li>
+<li><a href="#2flex-wrap">2.flex-wrap</a></li>
+<li><a href="#3flex-flow">3.flex-flow</a></li>
+<li><a href="#4justify-content">4.justify-content</a></li>
+<li><a href="#5align-items">5.align-items</a></li>
+<li><a href="#6align-content">6.align-content</a></li>
+</ul>
+</li>
+<li><a href="#%E6%88%90%E5%91%98%E5%B1%9E%E6%80%A7">成员属性</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="基本情景"><a href="#基本情景" class="headerlink" title="基本情景"></a>基本情景</h2><p>CSS的伸缩布局盒模型是经历过几次更新改版的，从最初的display:box到后面的display:flexbox再到现在的W3C标准display:flex,目的和形式是差不多的，所以这里只讨论一下最新的形式。首先看下图：</p>
+<html>
+  <head>
+    <style type="text/css">
+      .container{
+        height:210px;
+        width:600px;
+        background:#ddd;
+        padding:1px;
+        border-radius:10px;
+      }
+      .box1{
+        height:40px;
+        width:100px;
+        background:#2578b5;
+        margin:10px;
+        text-align:center;
+        line-height:40px;
+        border-radius:5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box1">1</div>
+      <div class="box1">2</div>
+      <div class="box1">3</div>
+      <div class="box1">4</div>
+    </div>
+  </body>
+</html>
+
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">      .container&#123;</span></span><br><span class="line"><span class="undefined">        height:210px;</span></span><br><span class="line"><span class="undefined">        width:600px;</span></span><br><span class="line"><span class="undefined">        background:#ddd;</span></span><br><span class="line"><span class="undefined">        padding:1px;</span></span><br><span class="line"><span class="undefined">        border-radius:10px;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">      .box1&#123;</span></span><br><span class="line"><span class="undefined">        height:40px;</span></span><br><span class="line"><span class="undefined">        width:100px;</span></span><br><span class="line"><span class="undefined">        background:#2578b5;</span></span><br><span class="line"><span class="undefined">        margin:10px;</span></span><br><span class="line"><span class="undefined">        text-align:center;</span></span><br><span class="line"><span class="undefined">        line-height:40px;</span></span><br><span class="line"><span class="undefined">        border-radius:5px;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>不对布局进行任何修饰，仅仅美化一下图形，我们得到的大盒中的4个方块默认按一下顺序排列，因为div属于块级元素，独占一行，自然会折行。如果我们想要让他们横着排列呢？直观的想法就是对小方块设置float:left,就会达到如下效果：</p>
+<html>
+  <head>
+    <style type="text/css">
+      .container2{
+        height:110px;
+        width:600px;
+        background:#ddd;
+        padding:1px;
+        border-radius:10px;
+      }
+      .box2{
+        height:40px;
+        width:100px;
+        background:#2578b5;
+        margin:10px;
+        text-align:center;
+        line-height:40px;
+        border-radius:5px;
+        float:left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container2">
+      <div class="box2">1</div>
+      <div class="box2">2</div>
+      <div class="box2">3</div>
+      <div class="box2">4</div>
+    </div>
+  </body>
+</html>
+简单理解浮动就是按字面意思，按照值中的要求按方向方块向左边浮了上去，如果是右边自然就是下面这样：
+<html>
+  <head>
+    <style type="text/css">
+      .container3{
+        height:110px;
+        width:600px;
+        background:#ddd;
+        padding:1px;
+        border-radius:10px;
+      }
+      .box3{
+        height:40px;
+        width:100px;
+        background:#2578b5;
+        margin:10px;
+        text-align:center;
+        line-height:40px;
+        border-radius:5px;
+        float:right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container3">
+      <div class="box3">1</div>
+      <div class="box3">2</div>
+      <div class="box3">3</div>
+      <div class="box3">4</div>
+    </div>
+  </body>
+</html>
+
+<p>我们要说的是，这只是最简单的布局排版，我们利用flex不仅可以搭档这些效果，还可以达到更多复杂的效果。<br>Flex的基础就是Flex布局是针对<code>容器</code>和<code>成员</code>的，就是图中的大盒子和小方块，容器包含一个<code>主轴</code>（横的）和一个<code>交叉轴</code>（竖的），成员默认按主轴排列。我们的Flex布局都是围绕这几个概念展开。我们要实现一个盒模型，首先就需要再容器中声明这是个盒子，里面的布局可以按照flex的规则来，所以就需要：</p>
+<pre><code>.container3{
+    height:110px;
+    width:600px;
+    background:#ddd;
+    padding:1px;
+    border-radius:10px;
+    display:flex;
+}
+</code></pre><h2 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h2><p>在container中声明了flex布局，就可以再container中给它赋予这些属性：</p>
+<pre><code>flex-direction
+flex-wrap
+flex-flow
+justify-content
+align-items
+align-content
+</code></pre><h3 id="1-flex-direction"><a href="#1-flex-direction" class="headerlink" title="1.flex-direction"></a>1.flex-direction</h3><p>flex-direction属性决定主轴的方向（即项目的排列方向）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">row（默认值）：主轴为水平方向，起点在左端。</span><br><span class="line">row-reverse：主轴为水平方向，起点在右端。</span><br><span class="line">column：主轴为垂直方向，起点在上沿。</span><br><span class="line">column-reverse：主轴为垂直方向，起点在下沿。</span><br></pre></td></tr></table></figure></p>
+<p>用flex-direction属性就可以解决上面的布局问题,大家可以尝试一下其他方向。</p>
+<html>
+  <head>
+    <style type="text/css">
+      .container4{
+        height:110px;
+        width:600px;
+        background:#ddd;
+        padding:1px;
+        border-radius:10px;
+        display:flex;
+      }
+      .box4{
+        height:40px;
+        width:100px;
+        background:#2578b5;
+        margin:10px;
+        text-align:center;
+        line-height:40px;
+        border-radius:5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container4">
+      <div class="box4">1</div>
+      <div class="box4">2</div>
+      <div class="box4">3</div>
+      <div class="box4">4</div>
+    </div>
+  </body>
+</html>
+
+<h3 id="2-flex-wrap"><a href="#2-flex-wrap" class="headerlink" title="2.flex-wrap"></a>2.flex-wrap</h3><p>默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nowrap（默认）：不换行。</span><br><span class="line">wrap：换行，第一行在上方。</span><br><span class="line">wrap-reverse：换行，第一行在下方。</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-flex-flow"><a href="#3-flex-flow" class="headerlink" title="3.flex-flow"></a>3.flex-flow</h3><p>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;  </span><br><span class="line">  <span class="attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-justify-content"><a href="#4-justify-content" class="headerlink" title="4.justify-content"></a>4.justify-content</h3><p>justify-content属性定义了项目在主轴上的对齐方式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">flex-start（默认值）：左对齐</span><br><span class="line">flex-end：右对齐</span><br><span class="line">center： 居中</span><br><span class="line">space-between：两端对齐，项目之间的间隔都相等。</span><br><span class="line">space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</span><br></pre></td></tr></table></figure></p>
+<p>其中两端对其非常实用,很多应用的顶部栏都是3个元素按照如下排列：</p>
+<html>
+  <head>
+    <style type="text/css">
+      .container5{
+        height:110px;
+        width:600px;
+        background:#ddd;
+        padding:1px;
+        border-radius:10px;
+        display:flex;
+        justify-content:space-between;
+      }
+      .box5{
+        height:40px;
+        width:100px;
+        background:#2578b5;
+        margin:10px;
+        text-align:center;
+        line-height:40px;
+        border-radius:5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container5">
+      <div class="box5">1</div>
+      <div class="box5">2</div>
+      <div class="box5">3</div>
+    </div>
+  </body>
+</html>
+
+<h3 id="5-align-items"><a href="#5-align-items" class="headerlink" title="5.align-items"></a>5.align-items</h3><p>align-items属性定义项目在交叉轴上如何对齐<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">flex-start：交叉轴的起点对齐。</span><br><span class="line">flex-end：交叉轴的终点对齐。</span><br><span class="line">center：交叉轴的中点对齐。</span><br><span class="line">baseline: 项目的第一行文字的基线对齐。</span><br><span class="line">stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</span><br></pre></td></tr></table></figure></p>
+<p>align-items的属性避免了我们设置高度和字行高相同实现居中带来的很多不可行的情况，也是非常实用。</p>
+<html>
+  <head>
+    <style type="text/css">
+      .container6{
+        height:110px;
+        width:600px;
+        background:#ddd;
+        padding:1px;
+        border-radius:10px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+      }
+      .box6{
+        height:40px;
+        width:100px;
+        background:#2578b5;
+        margin:10px;
+        text-align:center;
+        line-height:40px;
+        border-radius:5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container6">
+      <div class="box6">1</div>
+      <div class="box6">2</div>
+      <div class="box6">3</div>
+    </div>
+  </body>
+</html>
+
+<h3 id="6-align-content"><a href="#6-align-content" class="headerlink" title="6.align-content"></a>6.align-content</h3><p>align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">flex-start：与交叉轴的起点对齐。</span><br><span class="line">flex-end：与交叉轴的终点对齐。</span><br><span class="line">center：与交叉轴的中点对齐。</span><br><span class="line">space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</span><br><span class="line">space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</span><br><span class="line">stretch（默认值）：轴线占满整个交叉轴。</span><br></pre></td></tr></table></figure></p>
+<h2 id="成员属性"><a href="#成员属性" class="headerlink" title="成员属性"></a>成员属性</h2><p>成员属性让我们能够在盒子成员遵循盒子布局的大方向时仍然可以‘搞特殊化’，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">order</span><br><span class="line">flex-grow</span><br><span class="line">flex-shrink</span><br><span class="line">flex-basis</span><br><span class="line">flex</span><br><span class="line">align-self</span><br></pre></td></tr></table></figure></p>
+<p><strong>order</strong>属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。   </p>
+<p><strong>flex-grow</strong>属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
+<p><strong>flex-shrink</strong>属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。<br>负值对该属性无效。<br><strong>align-self</strong>属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</p>
+<p>以上的属性都可以根据最初的代码进行简单的尝试，很快就能理解Flex布局的作用，当然还是阮一峰老师写得详细一些，本文主体知识内容<br>摘自<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool</a></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Mosum</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://mosumtree.github.io/2018/08/10/CSS-Flex/">https://mosumtree.github.io/2018/08/10/CSS-Flex/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/css/">css</a></div><div class="social-share"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><nav id="pagination"><div class="prev-post pull-left"><a href="/2018/08/10/CSS-position/"><i class="fa fa-chevron-left">  </i><span>CSS:定位布局（position）</span></a></div><div class="next-post pull-right"><a href="/2018/08/10/css-centerGuide/"><span>CSS:居中指南</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://mosumtree.github.io/2018/08/10/CSS-Flex/';
+  this.page.identifier = '2018/08/10/CSS-Flex/';
+  this.page.title = 'CSS:Flex布局';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'mosum' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-src" src="https://mosum.disqus.com/count.js" async></script></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2017 - 2018 By Mosum</div><div class="busuanzi"><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.6"></script><script src="/js/fancybox.js?version=1.5.6"></script><script src="/js/sidebar.js?version=1.5.6"></script><script src="/js/copy.js?version=1.5.6"></script><script src="/js/fireworks.js?version=1.5.6"></script><script src="/js/transition.js?version=1.5.6"></script><script src="/js/scroll.js?version=1.5.6"></script><script src="/js/head.js?version=1.5.6"></script><script src="/js/search/algolia.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><div class="search-dialog" id="algolia-search"><div class="search-dialog__title" id="algolia-search-title">Algolia</div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><hr><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-stats"></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
